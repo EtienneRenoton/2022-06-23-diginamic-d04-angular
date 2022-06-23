@@ -42,4 +42,4 @@ jobs:
   with:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   BRANCH: gh-pages
-  FOLDER: deploy_dist/2022-06-23-diginamic-d04-angular
+  FOLDER: deploy_dist/top-colleagues
