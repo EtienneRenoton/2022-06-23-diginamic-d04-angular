@@ -1,8 +1,9 @@
 name: Deploy To GitHub Pages
+
 on:
-  push:
-   branches:
-    - 'etienne-renoton'
+ push:
+  branches:
+   - 'etienne-renoton'
 jobs:
  build:
   name: Build Angular App
