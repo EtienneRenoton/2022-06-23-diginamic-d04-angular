@@ -1,3 +1,3 @@
 
-<button type="button" class="btn btn-primary" (click)="onClick(LikeHate.LIKE)"[disabled]="score >= 1000">J'aime</button>
-<button type="button" class="btn btn-primary" (click)="onClick(LikeHate.HATE)"[disabled]="score <= -1000">Je déteste</button>
+<button type="button" class="btn btn-success" style="margin-right:24px"(click)="onClick(LikeHate.LIKE)"[disabled]="score >= 1000">J'aime</button>
+<button class="btn btn-danger" (click)="onClick(LikeHate.HATE)"[disabled]="score <= -1000">Je déteste</button>

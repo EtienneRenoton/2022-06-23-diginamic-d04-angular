@@ -1,6 +1,6 @@
 export interface Colleague {
-  pseudo: String;
+  pseudo: string;
   score: number;
-  photo: String;
+  photo: string;
 
 }
