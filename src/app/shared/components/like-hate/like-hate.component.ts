@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { LikeHate } from './../../../models/like-hate';
+import { Component, EventEmitter, Input, OnInit,Output } from '@angular/core';
 
 @Component({
   selector: 'tc-like-hate',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LikeHateComponent implements OnInit {
 
-  constructor() { }
+  LikeHate = LikeHate;
 
+  constructor() { }
+  @Input() score!: number;
   ngOnInit(): void {
   }
+@Output() likeHateOutput = new EventEmitter <LikeHate>()
+onClick(choix: LikeHate) {
+this.likeHateOutput.emit(choix)
+
+}
 
 }
