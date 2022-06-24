@@ -28,6 +28,8 @@ import { VotingHistoryComponent } from '../shared/components/voting-history/voti
     VotingHistoryComponent
   ]
 })
+
+
 export class SharedModule {
 
  }

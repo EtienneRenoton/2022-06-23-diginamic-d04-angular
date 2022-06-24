@@ -49,7 +49,9 @@ export class VotingHistoryComponent implements OnInit {
 
   ];
 
-
+  delVote(i:number){
+    this.voteList.splice(i, 1)
+  }
 
   constructor() { }
 

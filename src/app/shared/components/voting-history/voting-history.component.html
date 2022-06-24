@@ -2,7 +2,7 @@
   <div class="card-header">Historique</div>
 
   <ul class="list-group list-group-flush">
-    <li class="list-group-item" *ngFor="let vote of voteList">
+    <li class="list-group-item" *ngFor="let vote of voteList; let i=index">
       <div class="row">
         <div class="col-3">
           <img src={{vote.colleague.photo}} class="img-fluid" />
@@ -15,7 +15,7 @@
             <p>{{vote.colleague.pseudo}} est est détesté, la personne a désormais un score de, il/elle a désormais
               un score de {{vote.colleague.score}}</p>
           </div>
-          <div class="row"><button type="button" class="btn btn-Danger">Supprimer</button></div>
+          <div class="row"><button type="button" class="btn btn-Danger"(click)="delVote(i)">Supprimer</button></div>
         </div>
       </div>
     </li>
