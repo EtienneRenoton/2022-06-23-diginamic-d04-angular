@@ -2,8 +2,9 @@ import { VoteService } from './../../../providers/vote.service';
 import { Colleague } from 'src/app/models/colleague';
 import { Vote } from './../../../models/vote';
 
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { LikeHate } from './../../../models/like-hate';
+import { Subscription } from 'rxjs';
 
 
 
@@ -12,19 +13,24 @@ import { LikeHate } from './../../../models/like-hate';
   templateUrl: './voting-history.component.html',
   styleUrls: ['./voting-history.component.scss']
 })
-export class VotingHistoryComponent implements OnInit {
+export class VotingHistoryComponent implements OnInit, OnDestroy {
 
  listVotes: Vote[] = [];
 
-
+abonnement!: Subscription;
 
   constructor(private voteService: VoteService ) { }
 
   ngOnInit(): void {this.listVotes = this.voteService.voteList();
-    
+    this.abonnement = this.voteService.abonner().subscribe(vote=> this.listVotes.push(vote));
   }
 
   delVote(i:number){
     this.listVotes.splice(i, 1)
+  }
+  ngOnDestroy(): void {
+    if (this.abonnement) {
+      this.abonnement.unsubscribe();
+    }
   }
 }
