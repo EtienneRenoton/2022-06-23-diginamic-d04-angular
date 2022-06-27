@@ -12,6 +12,7 @@ export class LikeHateComponent implements OnInit {
 
   constructor() { }
   @Input() score!: number;
+
   ngOnInit(): void {
   }
 @Output() likeHateOutput = new EventEmitter <LikeHate>()

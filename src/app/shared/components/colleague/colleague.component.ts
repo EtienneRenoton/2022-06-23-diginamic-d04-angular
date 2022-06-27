@@ -1,3 +1,5 @@
+
+import { VoteService } from './../../../providers/vote.service';
 import { LikeHate } from './../../../models/like-hate';
 import { Colleague } from './../../../models/colleague';
 import { Component, Input, OnInit } from '@angular/core';
@@ -11,7 +13,7 @@ export class ColleagueComponent implements OnInit {
 
   @Input() coll!: Colleague;
 
-  constructor() { }
+constructor (private voteService: VoteService) {}
 
   ngOnInit(): void {
   }
@@ -22,5 +24,11 @@ export class ColleagueComponent implements OnInit {
   if (choix == LikeHate.HATE){
     this.coll.score -= 100;
   }
+  this.voteService.countVote ({
+    colleague: {... this.coll},
+    vote: choix
+  })
 }
+
+
 }

@@ -1,12 +1,15 @@
+import { Colleague } from 'src/app/models/colleague';
 import { Vote } from './../models/vote';
 import { LikeHate } from './../models/like-hate';
 import { Injectable } from '@angular/core';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class VoteService {
-
+  
+  private voteSubject = new Subject<Vote>();
   constructor() { }
 
   voteList(): Vote [] {
@@ -44,5 +47,14 @@ export class VoteService {
         vote: LikeHate.HATE
       },
     ]
+
 }
+abonner(): Observable<Vote> {
+return this.voteSubject.asObservable();
+}
+
+countVote(vote: Vote) {
+  this.voteSubject.next(vote)
+}
+
 }

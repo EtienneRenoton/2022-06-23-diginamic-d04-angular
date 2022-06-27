@@ -21,8 +21,9 @@ export class VotingHistoryComponent implements OnInit {
   constructor(private voteService: VoteService ) { }
 
   ngOnInit(): void {this.listVotes = this.voteService.voteList();
+    
   }
-  
+
   delVote(i:number){
     this.listVotes.splice(i, 1)
   }
