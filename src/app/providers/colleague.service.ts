@@ -1,14 +1,19 @@
+import { Observable } from 'rxjs';
 import { Colleague } from 'src/app/models/colleague';
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class ColleagueService {
 
-  constructor() { }
 
-  colleagueList(): Colleague [] {
+/**
+
+
+colleagueList(): Colleague [] {
     return [
 
       {
@@ -50,4 +55,12 @@ export class ColleagueService {
 
   ]
 }
+*/
+listerColleague():Observable<Colleague[]>{
+  return this.http.get<Colleague[]>("https://colleagues-app.herokuapp.com/api/v2/colleagues")
 }
+
+constructor(private http: HttpClient) { }
+
+}
+

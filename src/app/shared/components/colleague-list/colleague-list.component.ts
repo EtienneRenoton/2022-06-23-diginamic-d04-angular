@@ -1,3 +1,4 @@
+import { Subscription } from 'rxjs';
 import { ColleagueService } from './../../../providers/colleague.service';
 import { Component, OnInit } from '@angular/core';
 import { Colleague } from 'src/app/models/colleague';
@@ -11,10 +12,11 @@ export class ColleagueListComponent implements OnInit {
 
 listCollegues: Colleague[] = [];
 
+abonnement!: Subscription
 
   constructor(private colleagueService: ColleagueService) { }
 
-  ngOnInit(): void { this.listCollegues = this.colleagueService.colleagueList();
+  ngOnInit(): void { this.abonnement = this.colleagueService.listerColleague().subscribe(coll => this.listCollegues= coll)
   }
 
 }
