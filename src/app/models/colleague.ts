@@ -4,3 +4,8 @@ export interface Colleague {
   photo: string;
 
 }
+
+export interface FullColleague extends Colleague {
+  first: string;
+  last: string
+}

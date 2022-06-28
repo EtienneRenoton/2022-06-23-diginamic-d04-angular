@@ -12,11 +12,13 @@ export class ColleagueListComponent implements OnInit {
 
 listCollegues: Colleague[] = [];
 
-abonnement!: Subscription
+
 
   constructor(private colleagueService: ColleagueService) { }
 
-  ngOnInit(): void { this.abonnement = this.colleagueService.listerColleague().subscribe(coll => this.listCollegues= coll)
+  ngOnInit(): void {
+    this.colleagueService.listerColleague()
+    .subscribe(listeCollegueServeur => this.listCollegues= listeCollegueServeur)
   }
 
 }
