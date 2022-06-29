@@ -1,3 +1,5 @@
+<div class="container mb-3" >
+  <h2>Créer un collègue</h2>
 <form method="POST" #statutForm="ngForm">
   <div class="form-group row">
     <label for="pseudo" class="col-sm-2 col-form-label">Pseudo</label>
@@ -29,3 +31,4 @@
   </div>
   <button type="submit" class="btn btn-outline-dark" (click)="valider()" [disabled]="!statutForm.valid">Ajouter</button>
 </form>
+</div>

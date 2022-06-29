@@ -12,9 +12,9 @@
             <b>{{vote.colleague.pseudo}}</b>
           </div>
           <div class="row">
-            <p>{{vote.colleague.pseudo}} est {{vote.vote==LikeHate.LIKE ? "aimé" : "détesté"}}, son score est désormais de {{vote.colleague.score}}</p>
+            <p>{{vote.colleague.pseudo}} est {{vote.score <= 0 ? "aimé" : "détesté"}}, son score est désormais de {{vote.colleague.score}} {{vote.colleague.score <=0 ? ":-(" : ":-)" }}</p>
           </div>
-          <div class="row"><button type="button" class="btn btn-Danger"(click)="delVote(i)">Supprimer</button></div>
+          <div class="row"><button type="button" class="btn btn-outline-dark mt-1 ms-1"(click)="delVote(i)">Supprimer</button></div>
         </div>
       </div>
     </li>
