@@ -1,4 +1,4 @@
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -9,6 +9,7 @@ import { ScorePipe } from '../shared/pipes/score.pipe';
 import { VotingHistoryComponent } from '../shared/components/voting-history/voting-history.component';
 import { CounterComponent } from '../shared/components/counter/counter.component';
 import { CreateColleagueFormsComponent } from './components/create-colleague-forms/create-colleague-forms.component';
+import { CreateColleagueReactiveFormsComponent } from './components/create-colleague-reactive-forms/create-colleague-reactive-forms.component';
 
 
 
@@ -20,10 +21,15 @@ import { CreateColleagueFormsComponent } from './components/create-colleague-for
     ScorePipe,
     VotingHistoryComponent,
     CounterComponent,
-    CreateColleagueFormsComponent
+    CreateColleagueFormsComponent,
+    CreateColleagueReactiveFormsComponent,
+    
   ],
   imports: [
-    CommonModule,HttpClientModule, FormsModule
+    CommonModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
 
   ],
   exports: [
@@ -33,7 +39,8 @@ import { CreateColleagueFormsComponent } from './components/create-colleague-for
     ScorePipe,
     VotingHistoryComponent,
     CounterComponent,
-    CreateColleagueFormsComponent
+    CreateColleagueFormsComponent,
+    CreateColleagueReactiveFormsComponent
   ]
 })
 

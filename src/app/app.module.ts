@@ -1,3 +1,4 @@
+import { CreateColleagueReactiveModule } from './pages/create-colleague-reactive/create-colleague-reactive.module';
 import { WelcomeModule } from './pages/welcome/welcome.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -15,7 +16,8 @@ import { CreateColleagueModule } from './pages/create-colleague/create-colleague
     SharedModule,
     WelcomeModule,
     HttpClientModule,
-    CreateColleagueModule
+    CreateColleagueModule,
+    CreateColleagueReactiveModule
   ],
   providers: [],
   bootstrap: [AppComponent]
