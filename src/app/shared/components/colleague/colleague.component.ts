@@ -11,7 +11,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./colleague.component.scss']
 })
 export class ColleagueComponent implements OnInit {
-  votes: Vote[] = [];
+  
 
   @Input() colleague!: Colleague;
 
@@ -20,9 +20,7 @@ export class ColleagueComponent implements OnInit {
   constructor (private voteService: VoteService) {}
 
   ngOnInit(): void {
-    this.abonnement = this.voteService.abonner().subscribe(vote => {
-      this.votes.unshift(vote);
-    });
+
   }
 
   updateScore(choix:LikeHate){

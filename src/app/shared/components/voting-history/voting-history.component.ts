@@ -21,7 +21,7 @@ abonnement!: Subscription;
   constructor(private voteService: VoteService ) { }
 
   ngOnInit(): void {
-    this.abonnement = this.voteService.abonner().subscribe(vote=> this.listVotes.push(vote));
+   this.abonnement = this.voteService.abonner().subscribe(vote=> this.listVotes.unshift(vote));
   }
 
   delVote(i:number){

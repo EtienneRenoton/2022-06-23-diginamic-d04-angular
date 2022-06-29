@@ -1,8 +1,10 @@
+import { AddColleague, FullColleague } from './../models/colleague';
 import { Observable } from 'rxjs';
 import { Colleague } from 'src/app/models/colleague';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
+const COLLEAGUES_URL = 'https://colleagues-app.herokuapp.com/api/v2/colleagues';
 @Injectable({
   providedIn: 'root'
 })
@@ -57,9 +59,18 @@ colleagueList(): Colleague [] {
 }
 */
 listerColleague():Observable<Colleague[]>{
-  return this.http.get<Colleague[]>("https://colleagues-app.herokuapp.com/api/v2/colleagues")
+  return this.http.get<Colleague[]>(COLLEAGUES_URL)
 }
 
+addNewColleague(addColleague: AddColleague): Observable<FullColleague> {
+  return this.http.post<FullColleague>(COLLEAGUES_URL,{
+    pseudo: addColleague.pseudo,
+    first: addColleague.first,
+    last: addColleague.last,
+    photo: addColleague.photo
+  })
+
+}
 constructor(private http: HttpClient) { }
 
 }

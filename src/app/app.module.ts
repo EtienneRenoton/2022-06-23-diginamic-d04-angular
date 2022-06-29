@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
+import { CreateColleagueModule } from './pages/create-colleague/create-colleague.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     SharedModule,
     WelcomeModule,
-    HttpClientModule
+    HttpClientModule,
+    CreateColleagueModule
   ],
   providers: [],
   bootstrap: [AppComponent]

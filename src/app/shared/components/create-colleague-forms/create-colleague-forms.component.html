@@ -1,0 +1,31 @@
+<form method="POST" #statutForm="ngForm">
+  <div class="form-group row">
+    <label for="pseudo" class="col-sm-2 col-form-label">Pseudo</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="pseudo" id="pseudo" #statutPseudo="ngModel" required [(ngModel)]="addColleague.pseudo">
+      <p *ngIf="statutPseudo.dirty && statutPseudo.invalid">Le Pseudo est obligatoire</p>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="nom"class="col-sm-2 col-form-label">Nom</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="last" id="last" #statutNom="ngModel" required [(ngModel)]="addColleague.last">
+      <p *ngIf="statutNom.dirty && statutNom.invalid">Le Nom est obligatoire</p>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="prenom"class="col-sm-2 col-form-label">Prénom</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="first" id="first" #statutPrenom="ngModel" required [(ngModel)]="addColleague.first">
+      <p *ngIf="statutPrenom.dirty && statutPrenom.invalid">Le Prénom est obligatoire</p>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for=""class="col-sm-2 col-form-label">Photo</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="photo" id="photo" #statutPhoto="ngModel" required [(ngModel)]="addColleague.photo">
+      <p *ngIf="statutPhoto.dirty && statutPhoto.invalid">L'URL de la photo est obligatoire</p>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-outline-dark" (click)="valider()" [disabled]="!statutForm.valid">Ajouter</button>
+</form>
