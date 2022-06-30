@@ -1,3 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+$primary:       rgb(23, 104, 172 ) !default;
+$secondary:     rgb(163, 144, 228) !default;
+$success:       rgb(53, 167, 255) !default;
+$info:          cyan !default;
+$warning:       yellow !default;
+$danger:        rgb(255, 127, 17) !default;
+$light:         rgb(255, 255, 251) !default;
+$dark:          rgb(9, 21, 64) !default;
+
 @import "bootstrap";
+
 
