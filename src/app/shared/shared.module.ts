@@ -10,6 +10,7 @@ import { VotingHistoryComponent } from '../shared/components/voting-history/voti
 import { CounterComponent } from '../shared/components/counter/counter.component';
 import { CreateColleagueFormsComponent } from './components/create-colleague-forms/create-colleague-forms.component';
 import { CreateColleagueReactiveFormsComponent } from './components/create-colleague-reactive-forms/create-colleague-reactive-forms.component';
+import { MenuComponentComponent } from './components/menu-component/menu-component.component';
 
 
 
@@ -23,7 +24,8 @@ import { CreateColleagueReactiveFormsComponent } from './components/create-colle
     CounterComponent,
     CreateColleagueFormsComponent,
     CreateColleagueReactiveFormsComponent,
-    
+
+
   ],
   imports: [
     CommonModule,
@@ -40,7 +42,8 @@ import { CreateColleagueReactiveFormsComponent } from './components/create-colle
     VotingHistoryComponent,
     CounterComponent,
     CreateColleagueFormsComponent,
-    CreateColleagueReactiveFormsComponent
+    CreateColleagueReactiveFormsComponent,
+    
   ]
 })
 

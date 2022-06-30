@@ -1,0 +1,30 @@
+import { CreateColleagueReactivePage } from './pages/create-colleague-reactive/create-colleague-reactive.page';
+import { CreateColleaguePage } from './pages/create-colleague/create-colleague.page';
+import { WelcomePage } from './pages/welcome/welcome.page';
+import { NgModule, Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
+
+
+
+const routes: Routes = [
+{path:'colleagues', component: WelcomePage},
+{path:'form-template', component: CreateColleaguePage},
+{path:'form-reactive', component: CreateColleagueReactivePage},
+{path: '', pathMatch: 'full', redirectTo: 'colleagues' },
+];
+
+@NgModule({
+  declarations: [
+
+  ],
+  imports: [
+    CommonModule,
+    RouterModule.forRoot(routes),
+
+  ],
+  exports: [
+    RouterModule
+  ]
+})
+export class AppRoutingModule { }

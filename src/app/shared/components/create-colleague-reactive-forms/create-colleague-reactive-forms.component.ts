@@ -45,7 +45,14 @@ export class CreateColleagueReactiveFormsComponent implements OnInit {
       photo: '',
     });
   }
-
+disableButton() {
+  return (
+    this.colForm.controls['pseudo'].invalid ||
+    this.colForm.controls['nom'].invalid ||
+    this.colForm.controls['prenom'].invalid ||
+    this.colForm.controls['url'].invalid
+  )
+}
   checkFields(name: string) {
     return (
       this.colForm.controls[name].invalid && this.colForm.controls[name].dirty

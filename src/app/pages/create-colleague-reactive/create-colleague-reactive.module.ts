@@ -1,3 +1,4 @@
+import { AppRoutingModule } from './../../app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from './../../shared/shared.module';
 import { NgModule } from '@angular/core';
@@ -15,7 +16,8 @@ import { CreateColleagueReactivePage } from './create-colleague-reactive.page';
   imports: [
   CommonModule,
    SharedModule,
-   ReactiveFormsModule
+   ReactiveFormsModule,
+   AppRoutingModule
   ],
   exports: [CreateColleagueReactivePage
   ],
