@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { ColleagueService } from './../../../providers/colleague.service';
 import { AddColleague } from './../../../models/colleague';
 import { Component, OnInit } from '@angular/core';
@@ -18,7 +19,7 @@ export class CreateColleagueFormsComponent implements OnInit {
 
 };
 
-  constructor(private collegueService:ColleagueService) { }
+  constructor(private collegueService:ColleagueService, private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -35,6 +36,7 @@ export class CreateColleagueFormsComponent implements OnInit {
       first:'',
       photo:'',
     }
+    this.router.navigateByUrl("/colleagues")
   }
 
 }

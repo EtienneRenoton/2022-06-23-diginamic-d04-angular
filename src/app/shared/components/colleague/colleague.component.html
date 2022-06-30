@@ -1,7 +1,7 @@
 <div>
   <div class="card p-4 d-flex flex-column" >
   <img src= {{colleague.photo}} class="img-fluid" />
-  <p class="pseudo">{{colleague.pseudo | uppercase}}</p>
+  <a routerLink='/colleagues'>{{colleague.pseudo | uppercase}}</a>
   <p class="score">{{colleague.score | score}}</p>
   <tc-like-hate (likeHateOutput)="updateScore($event)"[score]="colleague.score"></tc-like-hate>
 </div>

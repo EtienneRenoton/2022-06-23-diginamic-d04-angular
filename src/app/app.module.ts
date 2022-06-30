@@ -1,3 +1,4 @@
+import { ColleagueDetailModule } from './pages/colleague-detail/colleague-detail.module';
 import { MenuComponentComponent } from './shared/components/menu-component/menu-component.component';
 import { CreateColleagueReactiveModule } from './pages/create-colleague-reactive/create-colleague-reactive.module';
 import { WelcomeModule } from './pages/welcome/welcome.module';
@@ -22,6 +23,7 @@ import { AppRoutingModule } from './app-routing.module';
     CreateColleagueModule,
     CreateColleagueReactiveModule,
     AppRoutingModule,
+    ColleagueDetailModule
 
   ],
   providers: [],

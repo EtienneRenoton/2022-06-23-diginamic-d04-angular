@@ -69,7 +69,9 @@ addNewColleague(addColleague: AddColleague): Observable<FullColleague> {
     last: addColleague.last,
     photo: addColleague.photo
   })
-
+}
+getColleague(pseudo: string){
+  return this.http.get<FullColleague>(COLLEAGUES_URL + '/' + pseudo)
 }
 constructor(private http: HttpClient) { }
 

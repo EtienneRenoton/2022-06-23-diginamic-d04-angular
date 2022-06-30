@@ -1,3 +1,4 @@
+import { ColleagueDetailPage } from './pages/colleague-detail/colleague-detail.page';
 import { CreateColleagueReactivePage } from './pages/create-colleague-reactive/create-colleague-reactive.page';
 import { CreateColleaguePage } from './pages/create-colleague/create-colleague.page';
 import { WelcomePage } from './pages/welcome/welcome.page';
@@ -11,6 +12,7 @@ const routes: Routes = [
 {path:'colleagues', component: WelcomePage},
 {path:'form-template', component: CreateColleaguePage},
 {path:'form-reactive', component: CreateColleagueReactivePage},
+{path:'detail/:pseudo', component: ColleagueDetailPage},
 {path: '', pathMatch: 'full', redirectTo: 'colleagues' },
 ];
 
